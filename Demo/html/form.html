@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Form
+        </title>
+    <script src="F:/Demo/js/form.js"></script>
+    <link rel="stylesheet" type="text/css" href="design_form.css">
+    </head>
+
+    <body onload="load()">
+        <form onsubmit="return validateform()" >
+            <label for="name">Name:</label> &nbsp;
+            <input type="text" id="name" class="input"><br><br><br>
+            <label for="email_id">Email Id:</label> &nbsp;
+            <input type="email" id="email_id" class="input"><br><br><br>
+            <label for="number">Contact number:</label>
+            <input type="tel" id="number" pattern="[0-9]{10}" class="input"> <br><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" class="input"> `<br> 
+            <img id="photo" src="profile_photo.jpg" width="136px", height="136px"> <br>
+            <input type="file" id="upload", onchange="changeImage(event)"> <br><br><br><br>
+            <input type="submit" onclick="commit()"> &nbsp &nbsp;
+            <input type="submit" value="Logout" onclick="return logout()">
+
+        </form>
+    </body>
+</html>
