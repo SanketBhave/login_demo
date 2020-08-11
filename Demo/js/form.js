@@ -6,24 +6,30 @@ function validateform(){
     var name = document.getElementById("name").value;
     if((!/[a-zA-Z]+/.test(name)) || name == ""){
         alert("Invalid name");
+        return false;
     }
     var email_id = document.getElementById("email_id").value;
     if (email_id === ""){
         alert("Email ID cannot be empty");
+        return false;
     }
     var number = document.getElementById("number").value;
     if((!/[0-9]+/.test(number)) || number === ""){
         alert("Invalid contact number");
+        return false;
     }
 
     var age = document.getElementById("age").value;
     if((!/[0-9]+/.test(age)) || !(10 <= age <= 100) || age === ""){
         alert("Enter correct age value");
+        return false;
     }
     var img = document.getElementById("photo").src;
     if(img === "file:///F:/Demo/html/profile_photo.jpg"){
-        alert("Please select profile picture")
+        alert("Please select profile picture");
+        return false;
     }
+    commit()
 }
 
 function commit() {
@@ -54,6 +60,7 @@ function commit() {
     var base64 = canvas.toDataURL();
     var data = JSON.stringify({"name": name, "email_id": email_id, "age": age, "number": number, "photo": base64, "uname": cred[0], "passwd": cred[1]});
     xhttp.send(data);
+    return true;
 }
 function logout(){
     window.location.assign("F:/Demo/html/Login.html");
@@ -71,4 +78,5 @@ function load(){
             img.src = "data:image/png;base64,"+data['photo'];
             document.getElementById("photo").src = "data:image/png;base64,"+data['photo'];
     }
+    return false;
 }

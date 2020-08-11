@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="design_form.css">
     </head>
 
-    <body onload="load()">
+    <body onload="return load()">
         <form onsubmit="return validateform()" >
             <label for="name">Name:</label> &nbsp;
             <input type="text" id="name" class="input"><br><br><br>
@@ -20,7 +20,7 @@
             <input type="number" id="age" class="input"> `<br> 
             <img id="photo" src="profile_photo.jpg" width="136px", height="136px"> <br>
             <input type="file" id="upload", onchange="changeImage(event)"> <br><br><br><br>
-            <input type="submit" onclick="commit()"> &nbsp &nbsp;
+            <input type="submit"> &nbsp &nbsp;
             <input type="submit" value="Logout" onclick="return logout()">
 
         </form>
